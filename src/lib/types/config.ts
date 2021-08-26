@@ -1,5 +1,6 @@
 interface BotConfiguration {
-    prefix: string;
+  prefix: string;
+  errorTimeoutTime: number;
 }
 
 export default BotConfiguration;

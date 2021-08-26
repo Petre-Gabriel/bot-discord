@@ -11,6 +11,7 @@ import BotConfig from './config/bot';
 import BotConfiguration from './types/config';
 import CommandHandler from './services/command-handler';
 import MessageResponder from './services/message-responder';
+import ReactionHandler from './services/reaction-handler';
 
 const container = new Container();
 
@@ -19,6 +20,8 @@ const LOGIN_TOKEN = env('TOKEN', '');
 container.bind<Bot>(ContainerTypes.Bot).to(Bot).inSingletonScope();
 container.bind<MessageResponder>(ContainerTypes.MessageResponder)
   .to(MessageResponder).inSingletonScope();
+container.bind<ReactionHandler>(ContainerTypes.ReactionHandler)
+  .to(ReactionHandler).inSingletonScope();
 
 // Constants
 container.bind<Client>(ContainerTypes.Client).toConstantValue(new Client(DiscordClientOptions));

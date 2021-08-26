@@ -5,6 +5,7 @@ const ContainerTypes = {
   BotConfig: Symbol('BotConfig'),
   CommandHandler: Symbol('CommandHandler'),
   MessageResponder: Symbol('MessageResponder'),
+  ReactionHandler: Symbol('ReactionHandler'),
 };
 
 export default ContainerTypes;

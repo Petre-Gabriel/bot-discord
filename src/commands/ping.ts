@@ -1,11 +1,9 @@
 import { Client, Message } from 'discord.js';
-import { injectable } from 'inversify';
 import Command from '../lib/decorators/command';
 import container from '../lib/inversify.config';
 import CommandInterface from '../lib/types/commands';
 import ContainerTypes from '../lib/types/dependencies';
 
-@injectable()
 @Command
 export default class PingCommand implements CommandInterface {
   name: string;
