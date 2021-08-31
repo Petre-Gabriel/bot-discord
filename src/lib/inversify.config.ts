@@ -13,9 +13,11 @@ import CommandHandler from './services/command-handler';
 import MessageResponder from './services/message-responder';
 import ReactionHandler from './services/reaction-handler';
 
-const container = new Container();
+const container = new Container({
+  defaultScope: 'Singleton',
+});
 
-const LOGIN_TOKEN = env('TOKEN', '');
+const LOGIN_TOKEN = env('TOKEN', null);
 
 container.bind<Bot>(ContainerTypes.Bot).to(Bot).inSingletonScope();
 container.bind<MessageResponder>(ContainerTypes.MessageResponder)
