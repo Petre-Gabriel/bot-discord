@@ -1,5 +1,6 @@
 import { Message, User } from 'discord.js';
 import { injectable } from 'inversify';
+import logError from '../helpers/logging';
 import Command, { CommandData } from '../types/commands';
 
 @injectable()
@@ -17,7 +18,7 @@ export default class CommandHandler {
 
       return true;
     } catch (e) {
-      console.error(`Error while adding command: ${e}`);
+      logError(`Error while adding command: ${e}`);
       return false;
     }
   }
@@ -30,10 +31,20 @@ export default class CommandHandler {
     if (!this.doesCommandExist(commandName)) { return false; }
 
     const commandData: Command | undefined = this.commandsMap.get(commandName);
+
+    if (!commandData) { return false; }
+
     const splitMessage = message.content.split(' ');
     const args: string[] = splitMessage.slice(1);
     const messageWithoutCommand: string = splitMessage.slice(1).join(' ');
     const { author } : {author: User} = message;
+
+    const commandArguments: string[] = commandData?.usage.split(' ').slice(1);
+
+    if (commandArguments.length !== args.length) {
+      message.reply(`Invalid syntax, please use:\n\`\`\`${commandData.usage}\`\`\``);
+      return false;
+    }
 
     const CommandDetails: CommandData = {
       args,

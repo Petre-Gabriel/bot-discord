@@ -20,7 +20,7 @@ export default class PingCommand implements CommandInterface {
 
   // eslint-disable-next-line class-methods-use-this
   public execute(message: Message) {
-    const LatencyInMS = message.createdTimestamp - Date.now();
+    const LatencyInMS = Date.now() - message.createdTimestamp;
     const APIPing = this.client.ws.ping;
 
     message.channel.send(`Latency -> ${LatencyInMS}ms.\nAPI latency: ${APIPing}ms`);

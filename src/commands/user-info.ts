@@ -45,11 +45,11 @@ export default class UserInfo implements CommandInterface {
 
     const CreatedAtString: string = FormatDateToString(UserAsDiscordUser.createdAt);
     const TimeSinceCreated: string = dayjs(UserAsDiscordUser.createdAt).fromNow();
-    const CreatedAtFieldData = `${CreatedAtString}\n( ${TimeSinceCreated} )`;
+    const CreatedAtFieldData = `${CreatedAtString}\n(${TimeSinceCreated})`;
 
     const JoinedAtString: string = FormatDateToString(UserAsGuildMember?.joinedAt);
     const TimeSinceJoined: string = dayjs(UserAsGuildMember?.joinedAt).fromNow();
-    const JoinedAtFieldData = `${JoinedAtString}\n( ${TimeSinceJoined} )`;
+    const JoinedAtFieldData = `${JoinedAtString}\n(${TimeSinceJoined})`;
 
     const UserRolesCollection = UserAsGuildMember?.roles.cache;
 

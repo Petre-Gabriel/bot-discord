@@ -2,6 +2,7 @@ import {
   GuildMember, Message, PartialMessage,
 } from 'discord.js';
 import OnReaction from '../lib/decorators/event';
+import logError from '../lib/helpers/logging';
 import container from '../lib/inversify.config';
 import BotConfiguration from '../lib/types/config';
 import ContainerTypes from '../lib/types/dependencies';
@@ -39,7 +40,7 @@ export default class VerifyReaction implements ReactionHook {
       const GuildMemberData: GuildMember = await guild.members.fetch(author.id);
       await GuildMemberData.roles.add(this.roleId);
     } catch (e) {
-      console.log('VerifyReaction: not allowed to add role to user.');
+      logError('VerifyReaction: not allowed to add role to user.');
       const errorMessage: Message = await message.channel.send(`<@${author.id}> I'm sorry. I can't add you to the member list right now. Please try again later or contact Gabriel03#3616.`);
 
       setTimeout((): void => {

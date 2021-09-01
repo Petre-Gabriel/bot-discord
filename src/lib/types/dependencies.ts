@@ -7,6 +7,7 @@ const ContainerTypes = {
   MessageResponder: Symbol('MessageResponder'),
   ReactionHandler: Symbol('ReactionHandler'),
   DBConnection: Symbol('DBConnection'),
+  MuteHandler: Symbol('MuteHandler'),
 };
 
 export default ContainerTypes;

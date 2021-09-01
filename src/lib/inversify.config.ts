@@ -12,6 +12,7 @@ import BotConfiguration from './types/config';
 import CommandHandler from './services/command-handler';
 import MessageResponder from './services/message-responder';
 import ReactionHandler from './services/reaction-handler';
+import MuteHandler from './services/mute-handler';
 
 const container = new Container({
   defaultScope: 'Singleton',
@@ -22,6 +23,7 @@ const LOGIN_TOKEN = env('TOKEN', null);
 container.bind<Bot>(ContainerTypes.Bot).to(Bot);
 container.bind<MessageResponder>(ContainerTypes.MessageResponder).to(MessageResponder);
 container.bind<ReactionHandler>(ContainerTypes.ReactionHandler).to(ReactionHandler);
+container.bind<MuteHandler>(ContainerTypes.MuteHandler).to(MuteHandler);
 
 // Constants
 container.bind<Client>(ContainerTypes.Client).toConstantValue(new Client(DiscordClientOptions));
