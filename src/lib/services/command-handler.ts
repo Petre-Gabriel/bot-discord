@@ -32,7 +32,7 @@ export default class CommandHandler {
     const commandData: Command | undefined = this.commandsMap.get(commandName);
     const splitMessage = message.content.split(' ');
     const args: string[] = splitMessage.slice(1);
-    const messageWithoutCommand: string = splitMessage.slice(1).join('');
+    const messageWithoutCommand: string = splitMessage.slice(1).join(' ');
     const { author } : {author: User} = message;
 
     const CommandDetails: CommandData = {

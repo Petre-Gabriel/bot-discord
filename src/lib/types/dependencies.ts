@@ -6,7 +6,7 @@ const ContainerTypes = {
   CommandHandler: Symbol('CommandHandler'),
   MessageResponder: Symbol('MessageResponder'),
   ReactionHandler: Symbol('ReactionHandler'),
-  DayJS: Symbol('DayJS'),
+  DBConnection: Symbol('DBConnection'),
 };
 
 export default ContainerTypes;

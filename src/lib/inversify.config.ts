@@ -19,11 +19,9 @@ const container = new Container({
 
 const LOGIN_TOKEN = env('TOKEN', null);
 
-container.bind<Bot>(ContainerTypes.Bot).to(Bot).inSingletonScope();
-container.bind<MessageResponder>(ContainerTypes.MessageResponder)
-  .to(MessageResponder).inSingletonScope();
-container.bind<ReactionHandler>(ContainerTypes.ReactionHandler)
-  .to(ReactionHandler).inSingletonScope();
+container.bind<Bot>(ContainerTypes.Bot).to(Bot);
+container.bind<MessageResponder>(ContainerTypes.MessageResponder).to(MessageResponder);
+container.bind<ReactionHandler>(ContainerTypes.ReactionHandler).to(ReactionHandler);
 
 // Constants
 container.bind<Client>(ContainerTypes.Client).toConstantValue(new Client(DiscordClientOptions));
