@@ -30,3 +30,6 @@ Start the server
 ```sh
 $ npm run start:dev
 ```
+
+**IMPORTANT**:
+You'll need to create an *.ENV* file with a field called *TOKEN* that contains your discord bot token.
