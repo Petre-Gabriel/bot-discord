@@ -32,4 +32,4 @@ $ npm run start:dev
 ```
 
 **IMPORTANT**:
-You'll need to create an *.ENV* file with a field called *TOKEN* that contains your discord bot token.
+You'll need to create an *.ENV* file with a field called *TOKEN* that contains your discord bot token and another one called *MONGO_URL* for the database connection string.
