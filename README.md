@@ -3,7 +3,7 @@ It's a simple bot for the WDR discord server.
 
 ### Folder structure
 
-For a easy to maintain codebase there are strict rules when it comes to the folder structure. Everything has to be in it's own place to keep the everything simple.
+For a easy to maintain codebase there are strict rules when it comes to the folder structure. Everything has to be in it's own place to keep it simple.
 
 | Plugin | README |
 | ------ | ------ |
